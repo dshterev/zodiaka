@@ -1,0 +1,2 @@
+# zodiaka
+ne te ebe 
