@@ -13,15 +13,15 @@
 <header>
     <a href="<?=APP_ROOT?>"><img src="<?=APP_ROOT?>/content/images/site-logo.png"></a>
     <a href="<?=APP_ROOT?>/">Начало</a>
-    <a href="<?=APP_ROOT?>/">Дневен зодиак</a>
-    <a href="<?=APP_ROOT?>/">Месечен зодиак</a>
-    <a href="<?=APP_ROOT?>/">Годишен зодиак</a>
+    <a href="<?=APP_ROOT?>/zodiac">Дневен зодиак</a>
+    <a href="<?=APP_ROOT?>/zodiac">Месечен зодиак</a>
+    <a href="<?=APP_ROOT?>/zodiac">Годишен зодиак</a>
     <a href="<?=APP_ROOT?>/">Зодии</a>
 <!--    TODO: DA se dovurshat zodiite-->
     <?php if ($this->isLoggedIn) : ?>
         <a href="<?=APP_ROOT?>/chineseCalendar">Китайски календар</a>
-        <a href="<?=APP_ROOT?>/posts/create">Някакъв календар</a>
-        <a href="<?=APP_ROOT?>/users">Още някакъв календар</a>
+        <a href="<?=APP_ROOT?>/">Някакъв календар</a>
+        <a href="<?=APP_ROOT?>/">Още някакъв календар</a>
     <?php else: ?>
         <a href="<?=APP_ROOT?>/users/login">Логин</a>
         <a href="<?=APP_ROOT?>/users/register">Регистрация</a>

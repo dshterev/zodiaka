@@ -26,6 +26,17 @@ class UsersModel extends BaseModel
         return false;
     }
 
+    public function getStatus (string $username) {
+        $statement = self::$db->prepare(
+            "SELECT user_status FROM users WHERE username = ?"
+        );
+        $statement->bind_param("s", $username);
+        $statement->execute();
+        $result = $statement->get_result()->fetch_assoc();
+        return $result['user_status'];
+    }
+
+
     public static function getAll() : array
     {
         $statement = self::$db->query(

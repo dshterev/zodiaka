@@ -17,6 +17,7 @@ class UsersController extends BaseController
             if($userId) {
                 $_SESSION['username'] = $username;
                 $_SESSION['userId'] = $userId;
+                $_SESSION['user_status'] = $this->model->getStatus($username);
                 $this->addInfoMessage("Login successful");
                 $this->redirect("");
             } else {

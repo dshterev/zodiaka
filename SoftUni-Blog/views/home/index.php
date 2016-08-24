@@ -8,6 +8,7 @@
         <a href="<?=APP_ROOT?>/home/view/<?=$post['id']?>"><?= htmlentities($post['title']) ?></a>
     <?php endforeach ?>
 </aside>
+
 <main>
    <?php foreach($this->posts as $post) : ?>
        <h1><?= htmlentities($post['title']) ?></h1>

@@ -2,7 +2,7 @@
 
 abstract class BaseController
 {
-//    TODO: Да се направи валидацията за администраторски акаунт.
+//    TODO: Валидацията за админ готова, не е тествана обаче ;ддд.
     protected $controllerName;
     protected $actionName;
     protected $isViewRendered = false;
@@ -23,6 +23,8 @@ abstract class BaseController
         }
 
         $this->isLoggedIn = isset($_SESSION['username']);
+
+        $this->isAdmin = isset($_SESSION['user_status']);
 
         // Load the default model class for the current controller
         $modelClassName = ucfirst(strtolower($controllerName)) . 'Model';
@@ -89,6 +91,14 @@ abstract class BaseController
         if (! $this->isLoggedIn) {
             $this->addErrorMessage("Please login first.");
             $this->redirect("users", "login");
+        }
+    }
+
+    public function authorizeAdministration()
+    {
+        if(! $this->isAdmin) {
+            $this->addErrorMessage("You are not an administrator");
+            $this->redirect("home", "index");
         }
     }
 

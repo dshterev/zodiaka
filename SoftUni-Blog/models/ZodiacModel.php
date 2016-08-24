@@ -1,16 +1,16 @@
 <?php
 
-class ChinesecalendarModel extends BaseModel
+class ZodiacModel extends BaseModel
 {
 //    TODO: Модела не е готов.
     function getAll()
     {
-        
-        $statement = self::$db->query("SELECT * FROM blog.chinese_zodiacs");
+
+        $statement = self::$db->query("SELECT * FROM blog.zodiacs");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
-    
-    
+
+
 
     public function create(string $title, string $content, int $user_id) : bool
     {
