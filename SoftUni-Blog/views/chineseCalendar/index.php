@@ -1,3 +1,4 @@
+
 <main>
     <form name="filterZodiacs" method="get">
         <select name="zodiacs" >
@@ -15,7 +16,6 @@
             <option value="dog">Куче</option>
             <option value="pig">Глиган</option>
         </select>
-
         <input type="submit" value="Покажи тази зодия">
     </form>
 
@@ -27,5 +27,6 @@
 
         </p>
         <p><?= $zodiac['content']?></p>
+
     <?php endforeach ?>
 </main>

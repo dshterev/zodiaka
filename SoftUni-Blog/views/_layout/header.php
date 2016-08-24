@@ -13,9 +13,9 @@
 <header>
     <a href="<?=APP_ROOT?>"><img src="<?=APP_ROOT?>/content/images/site-logo.png"></a>
     <a href="<?=APP_ROOT?>/">Начало</a>
-    <a href="<?=APP_ROOT?>/zodiac">Дневен зодиак</a>
-    <a href="<?=APP_ROOT?>/zodiac">Месечен зодиак</a>
-    <a href="<?=APP_ROOT?>/zodiac">Годишен зодиак</a>
+    <a href="<?=APP_ROOT?>/zodiac/daily">Дневен зодиак</a>
+    <a href="<?=APP_ROOT?>/zodiac/month">Месечен зодиак</a>
+    <a href="<?=APP_ROOT?>/zodiac/year">Годишен зодиак</a>
     <a href="<?=APP_ROOT?>/">Зодии</a>
 <!--    TODO: DA se dovurshat zodiite-->
     <?php if ($this->isLoggedIn) : ?>

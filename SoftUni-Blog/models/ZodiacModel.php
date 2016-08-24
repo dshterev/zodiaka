@@ -5,12 +5,60 @@ class ZodiacModel extends BaseModel
 //    TODO: Модела не е готов.
     function getAll()
     {
-
         $statement = self::$db->query("SELECT * FROM blog.zodiacs");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
 
+    function getDaily()
+    {
+        //Пресмята деня днес в 00:00:00 часа
+        $dateNow = date("Y-m-d H:i:s", strtotime("now", mktime(0, 0, 0)));
+        //Пресмята деня утре в 00:00:00 часа
+        $dateAfterOneDay = date("Y-m-d H:i:s", strtotime("+1 day", mktime(0, 0, 0)));
 
+        $query = "SELECT * FROM blog.zodiacs WHERE date BETWEEN " .
+            "'" .$dateNow . "'" .
+            " AND ".
+            "'" . $dateAfterOneDay . "'" .
+            " ORDER BY DATE desc;";
+
+        $statement = self::$db->query($query);
+        return $statement->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function getMonth()
+    {
+        //Пресмята деня днес в 00:00:00 часа
+        $dateNow = date("Y-m-d H:i:s", strtotime("now", mktime(0, 0, 0)));
+        //Пресмята деня след един месец в 00:00:00 часа
+        $dateAfterOneMonth = date("Y-m-d H:i:s", strtotime("+1 month", mktime(0, 0, 0)));
+
+        $query = "SELECT * FROM blog.zodiacs WHERE date BETWEEN " .
+            "'" .$dateNow . "'" .
+            " AND ".
+            "'" . $dateAfterOneMonth . "'" .
+            " ORDER BY DATE desc;";
+
+        $statement = self::$db->query($query);
+        return $statement->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function getYear()
+    {
+        //Пресмята деня днес в 00:00:00 часа
+        $dateNow = date("Y-m-d H:i:s", strtotime("now", mktime(0, 0, 0)));
+        //Пресмята деня след една година в 00:00:00 часа
+        $dateAfterOneYear = date("Y-m-d H:i:s", strtotime("+1 year", mktime(0, 0, 0)));
+
+        $query = "SELECT * FROM blog.zodiacs WHERE date BETWEEN " .
+            "'" .$dateNow . "'" .
+            " AND ".
+            "'" . $dateAfterOneYear . "'" .
+            " ORDER BY DATE desc;";
+
+        $statement = self::$db->query($query);
+        return $statement->fetch_all(MYSQLI_ASSOC);
+    }
 
     public function create(string $title, string $content, int $user_id) : bool
     {

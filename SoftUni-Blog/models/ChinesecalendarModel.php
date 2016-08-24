@@ -5,7 +5,6 @@ class ChinesecalendarModel extends BaseModel
 //    TODO: Модела не е готов.
     function getAll()
     {
-        
         $statement = self::$db->query("SELECT * FROM blog.chinese_zodiacs");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
