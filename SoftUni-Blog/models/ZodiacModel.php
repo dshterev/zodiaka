@@ -8,10 +8,15 @@ class ZodiacModel extends BaseModel
         $statement = self::$db->query("SELECT * FROM blog.zodiacs");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
-
+    
+    function getAllTypeOfSign(){
+        $statement = self::$db->query("SELECT * FROM blog.zodiacs WHERE zodiac_type = 'daily' AND DATE(`date`) = DATE(CURDATE());");
+        return $statement->fetch_all(MYSQLI_ASSOC);
+    }
+    
     function getDaily()
     {
-        //Пресмята деня днес в 00:00:00 часа
+        /*  //Пресмята деня днес в 00:00:00 часа
         $dateNow = date("Y-m-d H:i:s", strtotime("now", mktime(0, 0, 0)));
         //Пресмята деня утре в 00:00:00 часа
         $dateAfterOneDay = date("Y-m-d H:i:s", strtotime("+1 day", mktime(0, 0, 0)));
@@ -21,8 +26,9 @@ class ZodiacModel extends BaseModel
             " AND ".
             "'" . $dateAfterOneDay . "'" .
             " ORDER BY DATE desc;";
+        */
 
-        $statement = self::$db->query($query);
+        $statement = self::$db->query("SELECT * FROM blog.zodiacs WHERE zodiac_type = 'daily' AND DATE(`date`) = DATE(CURDATE());");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -37,7 +43,7 @@ class ZodiacModel extends BaseModel
             "'" .$dateNow . "'" .
             " AND ".
             "'" . $dateAfterOneMonth . "'" .
-            " ORDER BY DATE desc;";
+            " AND zodiac_type = 'month'";
 
         $statement = self::$db->query($query);
         return $statement->fetch_all(MYSQLI_ASSOC);
@@ -54,7 +60,7 @@ class ZodiacModel extends BaseModel
             "'" .$dateNow . "'" .
             " AND ".
             "'" . $dateAfterOneYear . "'" .
-            " ORDER BY DATE desc;";
+            " AND zodiac_type = 'year'";
 
         $statement = self::$db->query($query);
         return $statement->fetch_all(MYSQLI_ASSOC);

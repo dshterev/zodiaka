@@ -19,6 +19,10 @@ class ZodiacController extends BaseController
         $this->yearZodiacs = $this->model->getYear();
     }
 
+    function sign() {
+        $this->signsZodiacs = $this->model->getAllTypeOfSign();
+    }
+    
     function admin()
     {
         $this->authorize();
@@ -82,6 +86,6 @@ class ZodiacController extends BaseController
             $this->addErrorMessage("Грешка: Зодиака не съществува.");
             $this->redirect("admin");
         }
-        $this->zodiac = $post;
+
     }
 }

@@ -16,7 +16,7 @@
     <a href="<?=APP_ROOT?>/zodiac/daily">Дневен зодиак</a>
     <a href="<?=APP_ROOT?>/zodiac/month">Месечен зодиак</a>
     <a href="<?=APP_ROOT?>/zodiac/year">Годишен зодиак</a>
-    <a href="<?=APP_ROOT?>/">Зодии</a>
+    <a href="<?=APP_ROOT?>/zodiac/sign">Зодии</a>
 <!--    TODO: DA se dovurshat zodiite-->
     <?php if ($this->isLoggedIn) : ?>
         <a href="<?=APP_ROOT?>/chineseCalendar">Китайски календар</a>
