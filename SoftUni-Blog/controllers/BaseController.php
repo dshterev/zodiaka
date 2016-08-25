@@ -21,7 +21,7 @@ abstract class BaseController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->isPost = true;
         }
-
+        
         $this->isLoggedIn = isset($_SESSION['username']);
 
         $this->isAdmin = isset($_SESSION['user_status']);

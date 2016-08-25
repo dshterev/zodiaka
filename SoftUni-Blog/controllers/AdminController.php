@@ -10,15 +10,6 @@ class AdminController extends BaseController
     }
 
     function index() {
-        $this->posts = $this->model->getAll();
-    }
-
-    function view(int $id) {
-        $post = $this->model->getPostById($id);
-        if(!$post) {
-            $this->addErrorMessage("Error: invalid post");
-            $this->redirect("");
-        }
-        $this->post = $post;
+        
     }
 }
