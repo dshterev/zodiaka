@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="<?=APP_ROOT?>/content/styles.css" />
+    <link rel="stylesheet" href="<?=APP_ROOT?>/content/styles/userFormStyle/UserForm.css">
+    <link rel="stylesheet" href="<?=APP_ROOT?>/content/styles/registerFormStyle/RegisterForm.css">
     <link rel="icon" href="<?=APP_ROOT?>/content/images/favicon.ico" />
     <script src="<?=APP_ROOT?>/content/scripts/jquery-3.0.0.min.js"></script>
     <script src="<?=APP_ROOT?>/content/scripts/blog-scripts.js"></script>
@@ -16,7 +18,7 @@
     <a href="<?=APP_ROOT?>/zodiac/daily">Дневен зодиак</a>
     <a href="<?=APP_ROOT?>/zodiac/month">Месечен зодиак</a>
     <a href="<?=APP_ROOT?>/zodiac/year">Годишен зодиак</a>
-    <a href="<?=APP_ROOT?>/zodiac/sign">Зодии</a>
+    <a href="<?=APP_ROOT?>/">Зодии</a>
 <!--    TODO: DA se dovurshat zodiite-->
     <?php if ($this->isLoggedIn) : ?>
         <a href="<?=APP_ROOT?>/chineseCalendar">Китайски календар</a>
